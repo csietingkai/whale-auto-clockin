@@ -1,1 +1,1 @@
-[點我安裝](user-script.js?raw=True)
+[點我安裝](script.user.js?raw=True)
