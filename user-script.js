@@ -5,6 +5,7 @@
 // @description
 // @author       bbsobad
 // @match        https://whale-auto-clockin.pages.dev/
+// @match        http://eip.apacoe.com.tw/
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
@@ -15,8 +16,8 @@
     setInterval(() => {
         const now = new Date();
         const isClockTime = needClock(now, setting.clockin, setting.clockout);
-        if (isClockTime) {
-            const form = document.getElementById('frmSSSI01');
+        const form = document.getElementById('frmSSSI01');
+        if (form && isClockTime) {
             const eid = document.getElementById('txteid');
             const name = document.getElementById('txtname');
             const dept = document.getElementById('txtdept');
