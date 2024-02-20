@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         whale auto clockin
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1-20240220
+// @version      1.0.2
 // @description
 // @author       bbsobad
 // @match        https://whale-auto-clockin.pages.dev/
-// @match        http://eip.apacoe.com.tw/
+// @match        http://eip.apacoe.com.tw/*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
 // @grant        none
 // ==/UserScript==
