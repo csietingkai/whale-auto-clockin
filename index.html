@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC '-//W3C//DTD HTML 4.01//EN' 'http://www.w3.org/TR/html4/strict.dtd'>
+
+<html>
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta name="keywords" content="Web_Keywords">
+	<meta name="description" content="Web_Description">
+	<meta name="author" content="ConanWu">
+	<meta name="distribution" content="global">
+	<meta name="robots" content="all">
+	<meta name="revisit-after" content="3 days">
+	<meta name="copyright" content="KusoBook">
+	<title>前鼎光電 - APAC</title>
+	<script type="text/javascript" src="script.do"></script>
+	<script type="text/javascript" src="plugin/dojotoolkit/dojo/dojo.js"
+		djConfig="isDebug: false, parseOnLoad: true, dojoIframeHistoryUrl:'plugin/dojotoolkit/dojo/resources/iframe_history.html'"></script>
+	<script type="text/javascript" src="plugin/dojotoolkit/dojo/dojoclient.js"></script>
+	<style type="text/css">
+		@import "plugin/dojotoolkit/dijit/themes/soria/soria.css";
+		@import "plugin/dojotoolkit/dojo/resources/dojo.css";
+		@import "themes/default/style.css";
+	</style>
+</head>
+
+<body class="soria">
+	<!-- Start page -->
+	<div id="page">
+		<!-- Start wrapper -->
+		<div id="wrapper">
+			<form id="frmSSSI01" name="frmSSSI01" dojoType="dijit.form.Form" method="POST" action="/application.do?code=SWIPE&nw=1">
+				<script type="dojo/method" event="onSubmit">
+					return this.validate()
+				</script>
+				<div class="appframe">
+					<div class="titlerow">
+						<div dojoType="dojo.data.ItemFileReadStore" jsId="EmployeeInfo" url="ajax.do?m=employeeinfo">
+						</div>
+						<label for="txteid" class="labelreq" style="font-size:30px">工號</label>
+						<input id="txteid" name="txteid" type="text" value="" style="font-size:30px;width: 130px;"
+							dojoType="dijit.form.ValidationTextBox"
+							onblur="dojo_getitemvalue(EmployeeInfo,'id',this.value, dijit.byId('txtname'),'name','您的工號輸入錯誤!');dojo_getitemvalue(EmployeeInfo,'id',this.value, dijit.byId('txtdept'),'dept','');"
+							required="true" promptMessage="請輸入您的工號" invalidMessage="請輸入您的工號" />
+					</div>
+					<div class="titlerow">
+						<div dojoType="dojo.data.ItemFileReadStore" jsId="EmployeeTemp" url="ajax.do?m=employeeinfo">
+						</div>
+						<label for="txttemp" class="labelreq" style="font-size:30px">上班必填體溫</label>
+						<input id="txttemp" name="txttemp" type="text" value="" style="font-size:30px;width: 130px;"
+							dojoType="dijit.form.TextBox" required="false" />
+					</div>
+					<div class="datarow">
+						<label for="txtname" class="labelnor">姓名</label>
+						<input id="txtname" name="txtname" type="text" value="" style="width: 130px;"
+							dojoType="dijit.form.TextBox" readonly="1" />
+						<label for="txtdept" class="labelnor">部門</label>
+						<input id="txtdept" name="txtdept" type="text" value="" style="width: 130px;"
+							dojoType="dijit.form.TextBox" readonly="1" />
+					</div>
+					<div class="datarow">
+						<label for="txtdate" class="labelnor">刷卡日期</label>
+						<input id="txtdate" readonly="1" name="txtdate" style="width:150px;"
+							constraints="{datePattern:'yyyyMMdd'}" promptMessage="請輸入您的刷卡日期" required="true"
+							value="20240109" />
+					</div>
+					<div class="datarow">
+						<label for="txtdate" class="labelnor">刷卡時間</label>
+						<input id="txttime" readonly="1" name="txttime" style="width:150px;"
+							constraints="{datePattern:'HH:mm'}" promptMessage="請輸入您的刷卡時間" required="true"
+							value="2323" />
+					</div>
+					<div class="submitrow">
+						<button type="submit" id="btnsubmit" name="btnsubmit" style="font-size:20px"
+							dojoType="dijit.form.Button" iconClass="bottonok" value="送出">送出</button>
+					</div>
+					<div class="appmemo">
+						<span class="title">注意事項：</span><br />
+						<span class="content">
+							※間接人員上下班即可填寫.<br />
+						</span>
+					</div>
+				</div>
+
+				<div dojoType="dijit.Dialog" id="showDialog" title="刷卡結果" execute="">
+					<table style="font-size:30px">
+						<tr>
+							<td></td>
+						</tr>
+						<tr>
+							<td align="center">
+								<button dojoType="dijit.form.Button" type="submit">關閉</button>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</form>
+
+			<script>
+
+				function showdialog() {
+					dijit.byId('showDialog').show();
+				}
+			</script>
+
+
+		</div>
+		<!-- End wrapper -->
+	</div>
+	<!-- End page -->
+</body>
+
+</html>
