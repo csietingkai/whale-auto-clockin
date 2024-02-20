@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         whale auto clockin
 // @namespace    http://tampermonkey.net/
-// @version      1.0-20240220
+// @version      1.0.1-20240220
 // @description
 // @author       bbsobad
 // @match        https://whale-auto-clockin.pages.dev/
